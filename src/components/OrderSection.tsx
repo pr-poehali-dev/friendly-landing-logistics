@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const SEND_ORDER_URL = "https://functions.poehali.dev/d01c068f-d68e-4494-ba99-5fbc9cf2b04c";
@@ -114,7 +115,10 @@ export default function OrderSection() {
               {loading ? "Отправляем..." : "Отправить заявку"}
             </button>
             <p className="text-center text-muted-foreground text-xs">
-              Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+              Нажимая кнопку, вы соглашаетесь с{" "}
+              <Link to="/privacy" className="underline hover:text-primary transition-colors">
+                политикой конфиденциальности
+              </Link>
             </p>
           </form>
         )}
