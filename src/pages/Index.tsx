@@ -70,7 +70,11 @@ export default function Index() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Icon name="Truck" size={22} className="text-primary" />
+            <img
+              src="https://cdn.poehali.dev/projects/6d54ddf7-e637-498d-9f98-b9986345c0b8/bucket/b789dd2c-c211-48ec-b000-4b7e103b31e8.png"
+              alt="Логотип"
+              className="h-10 w-auto"
+            />
             <span className="font-oswald font-semibold text-lg text-foreground tracking-wide">
               СПб — Вологда
             </span>
@@ -453,7 +457,11 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Icon name="Truck" size={20} className="text-amber-400" />
+                <img
+                  src="https://cdn.poehali.dev/projects/6d54ddf7-e637-498d-9f98-b9986345c0b8/bucket/b789dd2c-c211-48ec-b000-4b7e103b31e8.png"
+                  alt="Логотип"
+                  className="h-9 w-auto brightness-0 invert"
+                />
                 <span className="font-oswald font-semibold text-white text-lg">
                   Грузоперевозки СПб — Вологда
                 </span>
