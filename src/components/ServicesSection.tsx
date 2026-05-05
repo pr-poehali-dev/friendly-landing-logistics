@@ -108,7 +108,7 @@ export default function ServicesSection() {
             </div>
             <div className="flex flex-wrap gap-6 text-primary-foreground/90">
               {[
-                { label: "Маршрут", value: "СПб — Вологда" },
+                { label: "Маршрут", value: "СПб ↔ Вологда" },
                 { label: "Расстояние", value: "≈ 750 км" },
                 { label: "Грузоподъёмность", value: "до 1,5 т" },
               ].map((item) => (

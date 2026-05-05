@@ -76,11 +76,11 @@ export default function FooterSection() {
                   className="h-9 w-auto brightness-0 invert"
                 />
                 <span className="font-oswald font-semibold text-white text-lg">
-                  Грузоперевозки СПб — Вологда
+                  Грузоперевозки СПб ↔ Вологда
                 </span>
               </div>
               <p className="text-sm leading-relaxed">
-                Надёжные грузоперевозки по маршруту Санкт-Петербург — Вологда.
+                Надёжные грузоперевозки по маршруту Санкт-Петербург — Вологда и обратно.
                 Собственный автопарк, опыт более 5 лет.
               </p>
             </div>

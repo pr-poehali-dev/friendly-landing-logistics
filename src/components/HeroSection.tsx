@@ -15,7 +15,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-2">
             <img src={LOGO} alt="Логотип" className="h-10 w-auto" />
             <span className="font-oswald font-semibold text-lg text-foreground tracking-wide">
-              СПб — Вологда
+              СПб ↔ Вологда
             </span>
           </div>
           <a
@@ -46,7 +46,7 @@ export default function HeroSection() {
             <h1 className="font-oswald text-5xl md:text-6xl font-bold text-white leading-tight mb-4 animate-fade-in-up delay-100">
               Грузоперевозки
               <br />
-              <span className="text-amber-400">СПб — Вологда</span>
+              <span className="text-amber-400">СПб ↔ Вологда</span>
             </h1>
             <p className="text-white/85 text-xl md:text-2xl mb-8 leading-relaxed animate-fade-in-up delay-200">
               Свой автопарк · До 1,5 тонн · От 60 ₽/км
