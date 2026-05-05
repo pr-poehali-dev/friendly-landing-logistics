@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const LOGO =
@@ -97,7 +98,11 @@ export default function FooterSection() {
           </div>
           <div className="border-t border-white/10 pt-6 flex flex-wrap items-center justify-between gap-4 text-xs">
             <p>© 2025 ИП Бахтюрин Д.Н. Все права защищены.</p>
-            <p>Грузоперевозки по маршруту Санкт-Петербург — Вологда</p>
+            <div className="flex items-center gap-4">
+              <Link to="/privacy" className="text-white/50 hover:text-white/80 transition-colors">
+                Политика конфиденциальности
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
