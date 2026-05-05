@@ -1,13 +1,34 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_ORDER_URL = "https://functions.poehali.dev/d01c068f-d68e-4494-ba99-5fbc9cf2b04c";
+
 export default function OrderSection() {
   const [form, setForm] = useState({ name: "", phone: "", comment: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(SEND_ORDER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSent(true);
+      } else {
+        setError("Не удалось отправить заявку. Позвоните нам напрямую.");
+      }
+    } catch {
+      setError("Ошибка соединения. Позвоните нам напрямую.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,12 +102,16 @@ export default function OrderSection() {
                 className="w-full border border-input rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition resize-none"
               />
             </div>
+            {error && (
+              <p className="text-red-600 text-sm text-center">{error}</p>
+            )}
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground font-bold text-lg py-4 rounded-xl hover:bg-primary/90 transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2"
+              disabled={loading}
+              className="w-full bg-primary text-primary-foreground font-bold text-lg py-4 rounded-xl hover:bg-primary/90 transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
             >
-              <Icon name="Send" size={20} />
-              Отправить заявку
+              <Icon name={loading ? "Loader" : "Send"} size={20} className={loading ? "animate-spin" : ""} />
+              {loading ? "Отправляем..." : "Отправить заявку"}
             </button>
             <p className="text-center text-muted-foreground text-xs">
               Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
